@@ -1,0 +1,30 @@
+---
+import IconClose from "./icons/IconClose.astro";
+import IconMenu from "./icons/IconMenu.astro";
+import Menu from "./Menu.astro";
+---
+
+<header class="bg-orange-200 py-4 sticky top-0 shadow-md">
+    <div class="flex justify-between items-center px-5">
+        <h1 class="relative z-10"><a class="bg-black text-white font-bold text-lg inline-block py-2 px-4" href="./">Starter.</a></h1>
+        <button class="md:hidden inline-block relative z-10" id="NavMenu">
+            <IconMenu />
+            <IconClose />
+        </button>
+        <Menu />
+    </div>
+</header>
+
+<script is:inline>
+    const body = document.getElementsByTagName("body")[0];
+    const menuList = document.getElementById("menuList");
+    const NavMenu = document.getElementById("NavMenu");
+    const menuBar = document.getElementById("menuBar");
+    const closeMenu = document.getElementById("closeMenu");
+    NavMenu.addEventListener("click",()=>{
+        body.classList.toggle('overflow-hidden');
+        menuList.classList.toggle('hidden');
+        menuBar.classList.toggle('hidden');
+        closeMenu.classList.toggle('hidden');
+    })
+</script>

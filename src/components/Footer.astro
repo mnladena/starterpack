@@ -1,0 +1,9 @@
+<footer class="py-10 border-t-2 border-black text-center text-sm">
+   <a href="./">Starter</a> &copy;<span id="siteyear"></span>
+</footer>
+
+<script is:inline>
+    const d = new Date();
+let year = d.getFullYear();
+    document.getElementById("siteyear").innerHTML = year;
+</script>

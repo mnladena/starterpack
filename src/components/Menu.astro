@@ -1,0 +1,22 @@
+---
+import { BASE_URL } from  "@/consts";
+const menulist=[
+    {
+        "menu":"Home",
+        "url":BASE_URL
+    },
+    {
+        "menu":"Accordion",
+        "url":"/example/accordion.html"
+    }
+]
+---
+<ul id="menuList" class=" md:flex gap-8 flex-col fixed top-0 md:relative md:flex-row h-screen md:h-auto md:p-0  p-5 pt-[100px] bg-gray-900 md:bg-transparent right-0 left-0 hidden">
+    {
+        menulist.map((item)=>(
+            <li>
+                <a class="md:text-gray-800 text-center text-xl md:text-base md:text-left text-white hover:text-orange-400 font-semibold block border-b border-gray-500 md:border-none p-4 md:p-0" href={item.url}>{item.menu}</a>
+            </li>
+        ))
+    }
+</ul>
